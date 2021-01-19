@@ -7,7 +7,7 @@ def init_browser():
     executable_path = {'executable_path': 'C:/bin/chromedriver'}
     return Browser('chrome', **executable_path, headless=False)
 
-def scrape():
+def scrape_data():
     browser = init_browser()
     url = 'https://mars.nasa.gov/news/'
     browser.visit(url)
@@ -115,12 +115,15 @@ def scrape():
         
     # Save data in dictionary
     mars_data = {
-        "Top News Title" : top_news_title,
-        "News Paragraph" : news_paragraph,
-        "Featued Image URL" : featured_image_url,
-        "Mars Facts HTML Table" : mars_facts_html_table,
-        "Hemisphere Image URLs" : hemisphere_image_urls
+        "top_news" : top_news_title,
+        "top_news_paragraph" : news_paragraph,
+        "featured_image" : featured_image_url,
+        "mars_facts" : mars_facts_html_table,
+        "hemisphere_images" : hemisphere_image_urls
     }
+
+    # close browser
+    browser.quit()
 
     # return results
     return mars_data

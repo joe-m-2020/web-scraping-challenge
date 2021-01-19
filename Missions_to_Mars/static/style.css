@@ -1,0 +1,12 @@
+/* #latest_news {
+    float: left;
+} */
+
+#main_mars {
+    height:700px;
+    width:700px;
+    object-fit: contain;
+}
+.container-fluid {
+    padding: 0pc;
+}
